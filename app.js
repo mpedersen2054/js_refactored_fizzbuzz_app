@@ -29,19 +29,17 @@ $(function() {
   }
 
   function promptUser() {
-    var res = prompt("Enter a value and see this app count to the desired value while replacing values divisible by 3 with 'Fizz', and 5 with 'Buzz'"),
+    var res = prompt("Enter a value and see this app count to the desired value while replacing values divisible by 3 with 'Fizz', and 5 with 'Buzz'");
         resNum = +res;
 
-    if (typeof resNum != "number") {
-      return prompt("Please enter a number.");
-    }
-    else if (resNum > 100) {
+    if (isNaN(resNum) || resNum > 100) {
       var newNum = prompt("Please enter a number smaller than 100.");
       return +newNum;
     }
     else {
       return resNum;
     }
+
   }
 
 })();
